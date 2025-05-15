@@ -34,6 +34,7 @@
     - "{{ ansible_env.USERPROFILE }}\\OneDrive"
   loop_control:
     loop_var: directory
+  ignore_errors: true
 
 - name: Disable OneDrive via group policies
   when: remove_onedrive
