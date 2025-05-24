@@ -154,7 +154,7 @@
   loop_control:
     loop_var: hostname
   ignore_errors: true
-  when: dnsblock | default(true) is true
+  when: dnsblock | default('true') |bool is true
 
 - name: Remove any existing telemetry block rules from Windows Firewall
   community.windows.win_firewall_rule:
